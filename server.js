@@ -13,6 +13,9 @@ app.use(express.json());
 const API_URL = "https://api.forefront.ai/v1/chat/completions";
 const API_KEY = process.env.API_KEY;
 
+app.get('/', (req, res) => {
+    res.send("Server is running");
+});
 
 app.post('/chat', async (req, res) => {
     try {
