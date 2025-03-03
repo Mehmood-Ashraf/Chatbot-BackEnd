@@ -29,7 +29,9 @@ app.post('/chat', async (req, res) => {
         res.json(response.data);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: "Something went wrong!" });
+        res.status(500).json({ error: "Something went wrong!",
+            details: error?.response?.data || error.mesage
+         });
     }
 });
 
